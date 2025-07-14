@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Native Push Notification App - Web Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: #25d366;
+            color: white;
+            margin: -20px -20px 20px -20px;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .feature-list {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-list h3 {
+            color: #25d366;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        
+        .feature-item::before {
+            content: "✅";
+            margin-right: 8px;
+        }
+        
+        .demo-section {
+            margin-bottom: 20px;
+        }
+        
+        .demo-button {
+            width: 100%;
+            padding: 12px;
+            background: #25d366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+        
+        .demo-button:hover {
+            background: #128c7e;
+        }
+        
+        .demo-button.secondary {
+            background: #34b7f1;
+        }
+        
+        .demo-button.danger {
+            background: #ff6b6b;
+        }
+        
+        .notification-demo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 300px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification-demo.show {
+            transform: translateX(0);
+        }
+        
+        .notification-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            background: #25d366;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .notification-title {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .notification-body {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .notification-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .notification-action {
+            flex: 1;
+            padding: 6px 12px;
+            border: 1px solid #25d366;
+            background: transparent;
+            color: #25d366;
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+        
+        .notification-action.primary {
+            background: #25d366;
+            color: white;
+        }
+        
+        .info-section {
+            background: #e8f5e8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-section h3 {
+            color: #128c7e;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .info-section p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #25d366;
+            font-size: 12px;
+            font-weight: bold;
+            color: #25d366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WhatsApp Style Notifications</h1>
+            <p>React Native Internship Demo</p>
+        </div>
+        
+        <div class="feature-list">
+            <h3>✅ Features Implemented</h3>
+            <div class="feature-item">Firebase Cloud Messaging</div>
+            <div class="feature-item">WhatsApp-style UI</div>
+            <div class="feature-item">Native Android Module</div>
+            <div class="feature-item">Deep Linking Support</div>
+            <div class="feature-item">Background Notifications</div>
+            <div class="feature-item">Local Storage</div>
+            <div class="feature-item">Badge Count Management</div>
+            <div class="feature-item">Android 15 Compatible</div>
+        </div>
+        
+        <div class="demo-section">
+            <h3 style="margin-bottom: 15px; color: #128c7e;">📱 Notification Demo</h3>
+            <button class="demo-button" onclick="showNotification('message')">Show Message Notification</button>
+            <button class="demo-button secondary" onclick="showNotification('call')">Show Call Notification</button>
+            <button class="demo-button" onclick="showNotification('group')">Show Group Notification</button>
+            <button class="demo-button danger" onclick="clearNotifications()">Clear Notifications</button>
+        </div>
+        
+        <div class="info-section">
+            <h3>🚀 About This Project</h3>
+            <p>This React Native app demonstrates WhatsApp-style push notifications with Firebase Cloud Messaging, native Android modules, and deep linking. Built for Android 15 compatibility as part of a React Native internship assignment.</p>
+        </div>
+        
+        <div class="info-section">
+            <h3>🛠️ Setup Status</h3>
+            <p id="setup-status">⚠️ Android Studio setup required. Please run setup.bat and follow the instructions in SETUP.md to build the full React Native app.</p>
+        </div>
+        
+        <div class="tech-stack">
+            <div class="tech-item">React Native</div>
+            <div class="tech-item">TypeScript</div>
+            <div class="tech-item">Firebase FCM</div>
+            <div class="tech-item">Java Modules</div>
+            <div class="tech-item">Navigation</div>
+            <div class="tech-item">AsyncStorage</div>
+            <div class="tech-item">Deep Linking</div>
+            <div class="tech-item">WhatsApp UI</div>
+        </div>
+    </div>
+    
+    <div id="notification" class="notification-demo">
+        <div class="notification-header">
+            <div class="notification-icon">📱</div>
+            <div class="notification-title" id="notification-title">New Message</div>
+        </div>
+        <div class="notification-body" id="notification-body">
+            You have received a new message from John Doe
+        </div>
+        <div class="notification-actions">
+            <button class="notification-action" onclick="handleAction('reply')">Reply</button>
+            <button class="notification-action primary" onclick="handleAction('open')">Open</button>
+        </div>
+    </div>
+    
+    <script>
+        const notifications = {
+            message: {
+                title: "New Message",
+                body: "You have received a new message from John Doe",
+                icon: "💬"
+            },
+            call: {
+                title: "Incoming Call",
+                body: "Sarah Wilson is calling you...",
+                icon: "📞"
+            },
+            group: {
+                title: "Team Chat",
+                body: "New message in Team Chat: 'Don't forget about the meeting'",
+                icon: "👥"
+            }
+        };
+        
+        let notificationCount = 0;
+        
+        function showNotification(type) {
+            const notification = notifications[type];
+            const notificationEl = document.getElementById('notification');
+            const iconEl = notificationEl.querySelector('.notification-icon');
+            const titleEl = document.getElementById('notification-title');
+            const bodyEl = document.getElementById('notification-body');
+            
+            iconEl.textContent = notification.icon;
+            titleEl.textContent = notification.title;
+            bodyEl.textContent = notification.body;
+            
+            notificationEl.classList.add('show');
+            notificationCount++;
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                notificationEl.classList.remove('show');
+            }, 5000);
+            
+            // Simulate notification sound
+            if ('vibrate' in navigator) {
+                navigator.vibrate([200, 100, 200]);
+            }
+        }
+        
+        function handleAction(action) {
+            const notificationEl = document.getElementById('notification');
+            notificationEl.classList.remove('show');
+            
+            if (action === 'reply') {
+                alert('📝 Reply functionality would open the chat screen in the React Native app');
+            } else if (action === 'open') {
+                alert('📱 This would navigate to the notifications screen via deep linking');
+            }
+        }
+        
+        function clearNotifications() {
+            notificationCount = 0;
+            const notificationEl = document.getElementById('notification');
+            notificationEl.classList.remove('show');
+            alert('🧹 All notifications cleared! Badge count reset to 0.');
+        }
+        
+        // Show welcome notification on load
+        setTimeout(() => {
+            showNotification('message');
+        }, 1000);
+        
+        // Update setup status based on environment
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const statusEl = document.getElementById('setup-status');
+            
+            if (isLocalhost) {
+                statusEl.innerHTML = '✅ Running locally! This is a web demo of the React Native app functionality.';
+                statusEl.style.background = '#d4edda';
+                statusEl.style.color = '#155724';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,21 +1,58 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 React Native Push Notification App
 
-# Getting Started
+A comprehensive React Native application demonstrating **WhatsApp-style push notifications** with **Firebase Cloud Messaging (FCM)**, **native Android modules**, and **deep linking** support. Built for Android 15 compatibility as part of a React Native internship assignment.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🎯 Assignment Requirements Met
 
-## Step 1: Start Metro
+✅ **Basic React Native App** - Clean, modern UI with navigation  
+✅ **Real-time Push Notifications** - Firebase Cloud Messaging integration  
+✅ **WhatsApp-style Notifications** - Background and killed app support  
+✅ **Native Android Module** - Custom Java module for advanced notifications  
+✅ **Deep Linking** - Notification taps open specific screens  
+✅ **Local Notification Storage** - AsyncStorage for notification history  
+✅ **Badge Count Management** - WhatsApp-like badge functionality  
+✅ **Backend Simulation** - Built-in notification simulator  
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Core Functionality
+- **Firebase Cloud Messaging (FCM)** integration
+- **WhatsApp-style notification UI** with action buttons
+- **Background and killed app** notification handling
+- **Deep linking** from notifications to specific screens
+- **Local notification storage** with AsyncStorage
+- **Badge count management** and persistence
+- **Android 15 compatibility** with latest APIs
 
-```sh
-# Using npm
-npm start
+### Advanced Features
+- **Native Android module** written in Java/Kotlin
+- **Backend notification simulator** for testing
+- **Multiple notification types** (message, call, group, file, status)
+- **Notification history** with read/unread status
+- **Settings screen** with customizable preferences
+- **FCM token management** and topic subscriptions
 
-# OR using Yarn
-yarn start
+## 📁 Project Structure
+
+```
+RNPushNotificationApp/
+├── src/
+│   ├── screens/
+│   │   ├── HomeScreen.tsx          # Main dashboard with test buttons
+│   │   ├── NotificationScreen.tsx  # Notification history and management
+│   │   └── SettingsScreen.tsx      # App settings and configuration
+│   ├── services/
+│   │   ├── FirebaseService.ts      # FCM and notification handling
+│   │   └── BackendSimulator.ts     # Simulated backend for testing
+│   ├── utils/
+│   │   └── DeepLinkHandler.ts      # Deep linking utilities
+│   └── config/
+│       └── firebase.ts             # Firebase configuration
+├── android/
+│   └── app/src/main/java/com/rnpushnotificationapp/modules/
+│       ├── NotificationModule.java # Native Android notification module
+│       └── NotificationPackage.java # Native module package
+└── README.md
 ```
 
 ## Step 2: Build and run your app

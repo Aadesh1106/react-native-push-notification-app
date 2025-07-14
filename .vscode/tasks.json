@@ -1,0 +1,135 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start React Native Metro",
+            "type": "shell",
+            "command": "npm",
+            "args": ["start"],
+            "group": "build",
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Run Android App",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "android"],
+            "group": "build",
+            "isBackground": false,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Clean Android Build",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["clean"],
+            "group": "build",
+            "isBackground": false,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/android"
+            }
+        },
+        {
+            "label": "Build Android Debug APK",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["assembleDebug"],
+            "group": "build",
+            "isBackground": false,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/android"
+            }
+        },
+        {
+            "label": "Build Android Release APK",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["assembleRelease"],
+            "group": "build",
+            "isBackground": false,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/android"
+            }
+        },
+        {
+            "label": "Install Dependencies",
+            "type": "shell",
+            "command": "npm",
+            "args": ["install"],
+            "group": "build",
+            "isBackground": false,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Reset React Native Cache",
+            "type": "shell",
+            "command": "npm",
+            "args": ["start", "--", "--reset-cache"],
+            "group": "build",
+            "isBackground": false,
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}

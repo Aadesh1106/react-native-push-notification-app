@@ -1,23 +1,46 @@
 # 📱 React Native Push Notification App
 
-A comprehensive React Native application demonstrating **WhatsApp-style push notifications** with **Firebase Cloud Messaging (FCM)**, **native Android modules**, and **deep linking** support. Built for Android 15 compatibility as part of a React Native internship assignment.
-
-## 🎯 Assignment Requirements Met
-
-✅ **Basic React Native App** - Clean, modern UI with navigation  
-✅ **Real-time Push Notifications** - Firebase Cloud Messaging integration  
-✅ **WhatsApp-style Notifications** - Background and killed app support  
-✅ **Native Android Module** - Custom Java module for advanced notifications  
-✅ **Deep Linking** - Notification taps open specific screens  
-✅ **Local Notification Storage** - AsyncStorage for notification history  
-✅ **Badge Count Management** - WhatsApp-like badge functionality  
-✅ **Backend Simulation** - Built-in notification simulator  
+A complete React Native application with **Firebase Cloud Messaging** integration, featuring **WhatsApp-style push notifications**, **native Android modules**, and **modern UI components**. Built for Android 15 compatibility with comprehensive Firebase integration.
 
 ## 🚀 Features
 
-### Core Functionality
-- **Firebase Cloud Messaging (FCM)** integration
-- **WhatsApp-style notification UI** with action buttons
+### Push Notifications
+- **Firebase Cloud Messaging (FCM)** integration with real-time messaging
+- **WhatsApp-style notifications** with custom styling and sound
+- **Background & Foreground** notification handling
+- **Deep linking** support for notification actions
+- **Custom notification channels** and priority management
+- **Action buttons** (Reply, Mark as Read, Open App)
+- **Badge management** system with count persistence
+- **Sound and vibration** customization
+
+### User Interface
+- **React Navigation** with tab-based navigation
+- **Material Design** components with modern styling
+- **Home Screen** - FCM token display and notification testing
+- **Notifications Screen** - Notification history and management
+- **Settings Screen** - App configuration and preferences
+- **Responsive design** for various Android screen sizes
+
+### Technical Implementation
+- **Native Android modules** written in Java for advanced features
+- **TypeScript** for enhanced type safety and development experience
+- **Android 15 compatibility** with latest SDK (API 36)
+- **Firebase SDK v22.4.0** with full FCM integration
+- **AsyncStorage** for local data persistence
+- **Hot reload** development support with Metro bundler
+
+## 🎯 Assignment Requirements Met
+
+✅ **React Native App** - Modern UI with navigation and state management  
+✅ **Push Notifications** - Complete Firebase Cloud Messaging integration  
+✅ **WhatsApp-style Design** - Custom notification styling and behavior  
+✅ **Native Android Module** - Java module for advanced notification features  
+✅ **Deep Linking** - URL schemes and notification tap handling  
+✅ **Local Storage** - AsyncStorage for notification history  
+✅ **Badge Management** - WhatsApp-like badge count functionality  
+✅ **Firebase Integration** - Complete setup with google-services.json  
+✅ **Android 15 Support** - Latest SDK compatibility and features
 - **Background and killed app** notification handling
 - **Deep linking** from notifications to specific screens
 - **Local notification storage** with AsyncStorage

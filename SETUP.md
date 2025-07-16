@@ -239,22 +239,6 @@ RNPushNotificationApp/
 └── README.md              # Main documentation
 ```
 
-## 🎯 Next Steps
-
-1. **Set up development environment** following this guide
-2. **Configure Firebase** with your own project
-3. **Test the application** using various notification methods
-4. **Customize notifications** for your specific use case
-5. **Deploy and test** on physical devices
-
-## 📞 Support
-
-If you encounter issues:
-1. Check this setup guide thoroughly
-2. Verify all environment variables are set correctly
-3. Ensure Android emulator or device is properly connected
-4. Check Firebase configuration and permissions
-5. Review React Native doctor output: `npx react-native doctor`
 
 ---
 

@@ -1,8 +1,8 @@
-# 📱 React Native Push Notification App
+#  React Native Push Notification App
 
 A complete React Native application with **Firebase Cloud Messaging** integration, featuring **WhatsApp-style push notifications**, **native Android modules**, and **modern UI components**. Built for Android 15 compatibility with comprehensive Firebase integration.
 
-## 🚀 Features
+##  Features
 
 ### Push Notifications
 - **Firebase Cloud Messaging (FCM)** integration with real-time messaging
@@ -30,17 +30,17 @@ A complete React Native application with **Firebase Cloud Messaging** integratio
 - **AsyncStorage** for local data persistence
 - **Hot reload** development support with Metro bundler
 
-## 🎯 Assignment Requirements Met
+##  Assignment Requirements Met
 
-✅ **React Native App** - Modern UI with navigation and state management  
-✅ **Push Notifications** - Complete Firebase Cloud Messaging integration  
-✅ **WhatsApp-style Design** - Custom notification styling and behavior  
-✅ **Native Android Module** - Java module for advanced notification features  
-✅ **Deep Linking** - URL schemes and notification tap handling  
-✅ **Local Storage** - AsyncStorage for notification history  
-✅ **Badge Management** - WhatsApp-like badge count functionality  
-✅ **Firebase Integration** - Complete setup with google-services.json  
-✅ **Android 15 Support** - Latest SDK compatibility and features
+ **React Native App** - Modern UI with navigation and state management  
+ **Push Notifications** - Complete Firebase Cloud Messaging integration  
+ **WhatsApp-style Design** - Custom notification styling and behavior  
+ **Native Android Module** - Java module for advanced notification features  
+ **Deep Linking** - URL schemes and notification tap handling  
+ **Local Storage** - AsyncStorage for notification history  
+ **Badge Management** - WhatsApp-like badge count functionality  
+ **Firebase Integration** - Complete setup with google-services.json  
+ **Android 15 Support** - Latest SDK compatibility and features
 - **Background and killed app** notification handling
 - **Deep linking** from notifications to specific screens
 - **Local notification storage** with AsyncStorage
@@ -55,7 +55,7 @@ A complete React Native application with **Firebase Cloud Messaging** integratio
 - **Settings screen** with customizable preferences
 - **FCM token management** and topic subscriptions
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 RNPushNotificationApp/
